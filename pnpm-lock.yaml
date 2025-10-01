@@ -103,6 +103,9 @@ importers:
       lint-to-the-future-eslint:
         specifier: ^3.2.0
         version: 3.2.0(eslint@9.34.0)
+      magnific-popup:
+        specifier: 1.1.0
+        version: 1.1.0
       photoswipe:
         specifier: 5.4.4
         version: 5.4.4
@@ -6518,6 +6521,10 @@ packages:
 
   magic-string@0.30.19:
     resolution: {integrity: sha512-2N21sPY9Ws53PZvsEpVtNuSW+ScYbQdp4b9qUaL+9QkHUrGFKo56Lg9Emg5s9V/qrtNBmiR01sYhUOwu3H+VOw==}
+
+  magnific-popup@1.1.0:
+    resolution: {integrity: sha512-ghSa/1TKsOUL6ZlHfcfFCoB9Wms2nqaDdBEPh6QX9jFYQyMkUu7ciU1mrxedWWq4NM2m1C/llhHKLt6GKRYOzg==}
+    engines: {node: '>= 0.8.0'}
 
   make-dir@3.1.0:
     resolution: {integrity: sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw==}
@@ -16087,6 +16094,8 @@ snapshots:
   magic-string@0.30.19:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  magnific-popup@1.1.0: {}
 
   make-dir@3.1.0:
     dependencies:

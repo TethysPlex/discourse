@@ -64,16 +64,9 @@ export default {
     api.decorateChatMessage(this.forceLinksToOpenNewTab, {
       id: "linksNewTab",
     });
-    api.decorateChatMessage(
-      (element) =>
-        loadLightbox(
-          element.querySelectorAll("img:not(.emoji, .avatar)"),
-          siteSettings
-        ),
-      {
-        id: "lightbox",
-      }
-    );
+    api.decorateChatMessage((element) => loadLightbox(element, siteSettings), {
+      id: "lightbox",
+    });
     api.decorateChatMessage((element) => decorateHashtags(element, site), {
       id: "hashtagIcons",
     });
