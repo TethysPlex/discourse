@@ -21,6 +21,28 @@ module DiscourseAi
           scope.can_see_summary?(object.topic)
         end
 
+        plugin.add_to_serializer(
+          :topic_view,
+          :ai_summary,
+          include_condition: -> do
+            DiscoursePluginRegistry.apply_modifier(:serialize_ai_summary, false) &&
+              scope.can_see_summary?(object.topic)
+          end,
+        ) do
+          summary =
+            object.topic.ai_summaries.find_by(summary_type: AiSummary.summary_types[:complete])
+          if summary
+            {
+              id: summary.id,
+              summarized_text: summary.summarized_text,
+              algorithm: summary.algorithm,
+              outdated: summary.outdated,
+              created_at: summary.created_at,
+              updated_at: summary.updated_at,
+            }
+          end
+        end
+
         # Don't add gists to the following topic lists.
         gist_skipped_lists = %i[suggested semantic_related]
 
