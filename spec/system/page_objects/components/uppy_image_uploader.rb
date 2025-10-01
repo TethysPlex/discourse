@@ -40,11 +40,11 @@ module PageObjects
       end
 
       def close_lightbox_preview
-        find(".pswp__close").click
+        find(".mfp-close").click
       end
 
       def has_lightbox_preview?
-        has_css?(".pswp")
+        has_css?(".mfp-container")
       end
     end
   end
